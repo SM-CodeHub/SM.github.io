@@ -129,7 +129,7 @@ body {
 }
 
 .mini-sidebar:hover {
-  width: 150px; 
+  width: 160px; 
 }
 
 .mini-sidebar a {
@@ -157,7 +157,7 @@ body {
 
 .sidebar-text {
   opacity: 0; 
-  width: 0; 
+  width: auto; 
   overflow: hidden;
   white-space: nowrap;
   font-size: 16px;
@@ -362,8 +362,6 @@ body {
     margin-bottom: 5px;
   }
   
-  .timeline-content::before {
-    }
 }
 
 .hero-text h1 {
@@ -538,24 +536,6 @@ body {
     display: none; 
 }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px; 
-  margin-top: 30px;
-}
-
-.contact-links .contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 30px; 
-}
-
-.contact-links .contact-btn i {
-  margin-right: 8px; 
-}
-
 .contact {
   text-align: center;
   padding: 60px 20px;
@@ -566,11 +546,73 @@ body {
   font-size: 2rem;
   margin-bottom: 15px;
   color: #0F0E47; 
+} 
+/* === FIXED CONTACT BUTTONS (Icon Always Visible, Text on Hover) === */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #505081;
+  color: #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  width: 50px;                   
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.contact-btn i {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-right: 0;
+  transition: margin-right 0.4s ease;
+  flex-shrink: 0;
+  min-width: 1.3rem;              
+}
+
+.contact-btn:hover {
+  width: auto;                    
+  padding-left: 15px;
+  padding-right: 18px;
+  background-color: #0F0E47;
+}
+
+.contact-btn:hover i {
+  margin-right: 10px;            
+}
+
+.contact-text {
+  opacity: 0;                     
+  max-width: 0;                  
+  overflow: hidden;
+  color: #ffffff;
+  transition: opacity 0.4s ease, max-width 0.4s ease;
+  white-space: nowrap;
+}
+
+.contact-btn:hover .contact-text {
+  opacity: 1;                     
+  max-width: 200px;               
+  margin-left: 5px;
 }
 
 @media (max-width: 600px) {
   .contact-links {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     gap: 15px;
   }
